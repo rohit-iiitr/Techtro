@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import "boxicons/css/boxicons.min.css";
 
 export function Navbar() {
-  // const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Home", href: "#hero" },

@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, Lightbulb, Code2, Rocket, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Search, Lightbulb, Code2, Rocket } from "lucide-react";
 
 export function MethodologySection() {
   const ref = useRef(null);
@@ -37,16 +39,18 @@ export function MethodologySection() {
       title: "Launching & QA",
       description:
         "Rigorous testing ensures quality and performance before we launch your solution and provide comprehensive support.",
-      color: "bg-orange-400 ",
+      color: "bg-orange-400",
     },
   ];
 
   return (
     <section id="methodology" className="pt-20 relative overflow-hidden">
-
+      {/* Background Split */}
       <div className="absolute top-0 left-0 w-full h-[60%] bg-purple-100" />
       <div className="absolute top-[60%] left-0 w-full h-[40%] bg-white" />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -56,96 +60,90 @@ export function MethodologySection() {
         >
           <h2 className="text-2xl font-bold">
             <span className="text-yellow-500 text-lg px-2">✦</span>
-            OUR METHODLOGY
+            OUR METHODOLOGY
           </h2>
-          <p className="text-sm text-muted-foreground max-w-3xl mx-auto text-pretty">
+          <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
             Experience Excellence Techtro your leading digital solutions
-            provider. We are a leading
-            <br /> digital agency.
+            provider. We are a leading digital agency.
           </p>
+
           <div className="flex items-center justify-center mt-5">
-      <div className="bg-yellow-400 text-black font-bold rounded-full flex items-center justify-center w-32 h-32 shadow-md">
-        <span className="text-center text-sm leading-tight">
-          TECHTRO <br /> APPROACH
-        </span>
-      </div>
-    </div>
+            <div className="bg-yellow-400 text-black font-bold rounded-full flex items-center justify-center w-32 h-32 shadow-md">
+              <span className="text-center text-sm leading-tight">
+                TECHTRO <br /> APPROACH
+              </span>
+            </div>
+          </div>
         </motion.div>
 
-        <div className="relative">
-         
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10 ms-[110px]">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                }
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative bg-${step.color} flex items-center justify-center`}
+        {/* Steps */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <Card
+                className={`h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group ${step.color} rounded-tl-4xl rounded-br-4xl`}
               >
-                <Card
-                  className={`h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group ${step.color} ms-[50px] rounded-tl-4xl rounded-tr-none rounded-bl-none rounded-br-4xl`}
-                >
-                  <CardContent className="p-6 text-center">
-                    <div
-                      className={`w-10 h-8 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
-                    >
-                      <step.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="text-lg font-bold text-foreground mb-2 text-center">
-                      {step.title}
-                    </div>
-                    
-                  </CardContent>
-                </Card>
-
-              </motion.div>
-            ))}
-          </div>
+                <CardContent className="p-6 text-center">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <step.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="text-lg font-bold text-foreground mb-2">
+                    {step.title}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
 
+        {/* Image Section */}
         <div className="relative max-w-6xl mx-auto px-4 py-16">
-        {/* Image Card */}
-        <div className="flex justify-center">
-          <div className="relative rounded-3xl overflow-hidden shadow-lg w-full md:w-3/4">
-            <img
-              src="/ai-automation-in-business-office-setting.jpg" // replace with your image path
-              alt="Team working"
-              width={1200}
-              height={600}
-              className="w-full h-[500px] object-cover"
-            />
-            {/* Play button overlay */}
-            <button className="absolute inset-0 flex items-center justify-center">
-              <span className="bg-white/80 rounded-full px-3 py-4 font-semibold text-black shadow-md">
+          <div className="flex justify-center">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg w-full md:w-3/4 h-[500px]">
+              <Image
+                src="/ai-automation-in-business-office-setting.jpg"
+                alt="Team working"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Play Button */}
+              <Button
+                variant="default"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+             bg-white/80 hover:bg-white rounded-full w-20 h-20 
+             flex items-center justify-center text-black shadow-md"
+              >
                 PLAY
-              </span>
-            </button>
+              </Button>
+            </div>
           </div>
-        </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-          <div className="bg-purple-100 p-6 rounded-2xl text-center shadow-sm">
-            <h2 className="text-2xl font-bold">1k</h2>
-            <p className="text-gray-600">Award</p>
-          </div>
-          <div className="bg-blue-100 p-6 rounded-2xl text-center shadow-sm">
-            <h2 className="text-2xl font-bold">7+</h2>
-            <p className="text-gray-600">Year of experience</p>
-          </div>
-          <div className="bg-green-100 p-6 rounded-2xl text-center shadow-sm">
-            <h2 className="text-2xl font-bold">780+</h2>
-            <p className="text-gray-600">Project done</p>
-          </div>
-          <div className="bg-red-100 p-6 rounded-2xl text-center shadow-sm">
-            <h2 className="text-2xl font-bold">670+</h2>
-            <p className="text-gray-600">Happy Client</p>
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            <div className="bg-purple-100 p-6 rounded-2xl text-center shadow-sm">
+              <h2 className="text-2xl font-bold">1k</h2>
+              <p className="text-gray-600">Award</p>
+            </div>
+            <div className="bg-blue-100 p-6 rounded-2xl text-center shadow-sm">
+              <h2 className="text-2xl font-bold">7+</h2>
+              <p className="text-gray-600">Year of experience</p>
+            </div>
+            <div className="bg-green-100 p-6 rounded-2xl text-center shadow-sm">
+              <h2 className="text-2xl font-bold">780+</h2>
+              <p className="text-gray-600">Project done</p>
+            </div>
+            <div className="bg-red-100 p-6 rounded-2xl text-center shadow-sm">
+              <h2 className="text-2xl font-bold">670+</h2>
+              <p className="text-gray-600">Happy Client</p>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

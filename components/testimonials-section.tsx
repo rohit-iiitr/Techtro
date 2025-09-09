@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
 type Testimonial = {
@@ -36,36 +36,63 @@ const testimonials: Testimonial[] = [
     feedback:
       "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
   },
+  {
+    id: 4,
+    name: "Devon Lane",
+    role: "Senior Director",
+    image: "/professional-man-vp-headshot.jpg",
+    feedback:
+      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
+  },
+  {
+    id: 5,
+    name: "Kristin Watson",
+    role: "Senior Director",
+    image: "/professional-woman-founder-headshot.jpg",
+    feedback:
+      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
+  },
+  {
+    id: 6,
+    name: "Devon Lane",
+    role: "Senior Director",
+    image: "/professional-man-vp-headshot.jpg",
+    feedback:
+      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
+  },
 ];
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % testimonials.length);
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 320, behavior: "smooth" });
+    }
   };
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -320, behavior: "smooth" });
+    }
   };
 
   // Auto-scroll effect
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // 3 sec interval
-
-    return () => clearInterval(interval); // cleanup on unmount
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="bg-gray-100 py-16">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="bg-gray-100 py-16 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col items-start mx-5 px-5 mb-10">
+        <div className="flex flex-col items-start mb-10">
           <div className="flex items-center gap-2">
             <span className="text-yellow-500 text-lg">✦</span>
-            <h2 className="text-2xl font-bold">EXPLORE OUR PROJECT</h2>
+            <h2 className="text-2xl font-bold">FEEDBACK OUR CLIENTS</h2>
           </div>
 
           <div className="flex flex-wrap items-center justify-between w-full gap-4 mt-3">
@@ -92,16 +119,15 @@ export default function Testimonials() {
         </div>
 
         {/* Slider */}
-        <div className="relative flex items-center justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-hidden">
-            {testimonials.map((t, index) => (
+        <div className="relative w-full">
+          <div
+            ref={sliderRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
+          >
+            {testimonials.map((t) => (
               <div
                 key={t.id}
-                className={`rounded-2xl bg-white p-6 shadow-md transition-all duration-500 ${
-                  index === current
-                    ? "opacity-100 scale-100"
-                    : "opacity-30 scale-95"
-                }`}
+                className="min-w-[400px] max-w-[320px] flex-shrink-0 rounded-2xl bg-white p-6 shadow-md"
               >
                 <div className="flex justify-start items-center mb-4">
                   <span className="font-bold text-xl">VOIO</span>

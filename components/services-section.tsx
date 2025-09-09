@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "./ui/button";
-import "boxicons/css/boxicons.min.css";
-
 import {
   Card,
   CardContent,
@@ -74,10 +72,6 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="relative py-20 bg-black overflow-hidden">
-      {/* Background blobs */}
-      {/* <div className="absolute -top-16 -left-44 w-[35%] h-[60%] rounded-full bg-[#F9F871] mix-blend-screen filter blur-3xl opacity-25"></div>
-      <div className="absolute bottom-16 -right-56 w-[30%] h-[30%] rounded-full bg-[#1E2A78] mix-blend-screen filter blur-3xl opacity-30"></div> */}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading */}
         <motion.div
