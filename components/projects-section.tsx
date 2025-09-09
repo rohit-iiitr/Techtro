@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 import Image from "next/image";
 
 export function ProjectsSection() {
@@ -89,10 +90,10 @@ export function ProjectsSection() {
                 At our digital marketing agency, we pride ourselves on our
                 systematic approach to achieving your business objectives.
               </p>
-              <button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-tr-none rounded-bl-none rounded-br-lg flex items-center border-2 border-black">
+              <Button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-tr-none rounded-bl-none rounded-br-lg flex items-center border-2 border-black hover:bg-yellow-400">
                 See more work
                 <ArrowRight className="ml-2 h-4 w-4 text-black" />
-              </button>
+              </Button>
             </div>
           </div>
         </motion.div>
