@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import Image from "next/image";
 
 type Testimonial = {
   id: number;
@@ -137,7 +138,7 @@ export default function Testimonials() {
                 </div>
                 <p className="text-gray-600 text-left mb-6">{t.feedback}</p>
                 <div className="flex items-center gap-3">
-                  <img
+                  <Image
                     src={t.image}
                     alt={t.name}
                     className="w-10 h-10 rounded-full object-cover"
