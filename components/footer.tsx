@@ -12,6 +12,7 @@ import {
   Send,
 } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import ContactBanner from "./contact-banner";
 
 export function Footer() {
@@ -184,12 +185,12 @@ export function Footer() {
                   required
                   className="w-full px-4 py-2 bg-transparent text-gray-300 outline-none"
                 />
-                <button
+                <Button
                   type="submit"
                   className="bg-yellow-500 p-2 hover:bg-yellow-600 transition"
                 >
                   <Send className="w-5 h-5 text-black" />
-                </button>
+                </Button>
               </form>
             </motion.div>
           </div>
