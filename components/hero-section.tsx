@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { Heart, ThumbsUp, Play } from "lucide-react";
-import ImageCuts from "@/components/ImageCuts";
+import { Button } from "./ui/button";
 
 
 
@@ -161,10 +161,10 @@ export function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <button className="w-16 h-16 flex flex-col items-center justify-center rounded-full bg-gray-800 text-violet-400 hover:bg-gray-200 transition">
+            <Button className="w-16 h-16 flex flex-col items-center justify-center rounded-full bg-gray-800 text-violet-400 hover:bg-gray-200 transition">
               <i className="bx bx-up-arrow-alt bx-rotate-45 text-xl" />
               <span className="text-xs">Explore Service</span>
-            </button>
+            </Button>
 
             <div className="text-white mt-4 mx-3">
               <span className="text-xs text-gray-500">

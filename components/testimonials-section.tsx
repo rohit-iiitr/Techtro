@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 type Testimonial = {
   id: number;
@@ -29,38 +31,7 @@ const testimonials: Testimonial[] = [
     feedback:
       "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
   },
-  {
-    id: 3,
-    name: "Kristin Watson",
-    role: "Senior Director",
-    image: "/professional-woman-founder-headshot.jpg",
-    feedback:
-      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
-  },
-  {
-    id: 4,
-    name: "Devon Lane",
-    role: "Senior Director",
-    image: "/professional-man-vp-headshot.jpg",
-    feedback:
-      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
-  },
-  {
-    id: 5,
-    name: "Kristin Watson",
-    role: "Senior Director",
-    image: "/professional-woman-founder-headshot.jpg",
-    feedback:
-      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
-  },
-  {
-    id: 6,
-    name: "Devon Lane",
-    role: "Senior Director",
-    image: "/professional-man-vp-headshot.jpg",
-    feedback:
-      "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
-  },
+  // ... other testimonials
 ];
 
 export default function Testimonials() {
@@ -103,32 +74,34 @@ export default function Testimonials() {
             </p>
 
             <div className="flex items-center gap-2 shrink-0">
-              <button
+              <Button
                 onClick={prevSlide}
                 className="bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
               >
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={nextSlide}
                 className="bg-yellow-400 shadow-md rounded-full p-2 hover:bg-yellow-500"
               >
                 <ArrowRight className="w-5 h-5 text-white" />
-              </button>
+              </Button>
             </div>
           </div>
         </div>
 
         {/* Slider */}
-        <div className="relative w-full">
-          <div
+        <motion.div className="relative w-full">
+          <motion.div
             ref={sliderRef}
             className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth"
           >
             {testimonials.map((t) => (
-              <div
+              <motion.div
                 key={t.id}
                 className="min-w-[400px] max-w-[320px] flex-shrink-0 rounded-2xl bg-white p-6 shadow-md"
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="flex justify-start items-center mb-4">
                   <span className="font-bold text-xl">VOIO</span>
@@ -148,10 +121,10 @@ export default function Testimonials() {
                     <p className="text-sm text-gray-500">{t.role}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

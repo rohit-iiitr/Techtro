@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ScrollingBanner from "./scrolling-bar";
+import { Button } from "./ui/button";
 
 const HowWeDo = () => {
   return (
@@ -46,9 +47,9 @@ const HowWeDo = () => {
             impact. With a deep understanding of your industry and target
             audience.
           </p>
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md shadow-md transition flex items-center gap-2">
+          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md shadow-md transition flex items-center gap-2">
             Let’s get planning →
-          </button>
+          </Button>
         </motion.div>
 
         {/* Right Side Card */}
