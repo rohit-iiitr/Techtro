@@ -7,8 +7,8 @@ import React from 'react';
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Techtro',
+  description: 'marketing agency',
   generator: 'v0.app',
 }
 
