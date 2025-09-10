@@ -8,6 +8,7 @@ import {
   Linkedin,
   Twitter,
   Youtube,
+  ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
 import { Heart, ThumbsUp, Play } from "lucide-react";
@@ -78,12 +79,12 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#181A1D]"
+      className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#181A1D]"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hugo-juteau-xh_l2eGV4B4-unsplash.jpg"
+          src="/images/OIP.webp"
           alt="Modern office building"
           fill
           priority
@@ -93,7 +94,7 @@ export function HeroSection() {
       </div>
 
       {/* Side Social links */}
-      <div className="absolute right-3 top-1/5 flex flex-col items-center text-gray-400 space-y-8">
+      <div className="absolute right-3 top-1/5 flex flex-col items-center text-gray-400 space-y-8 -mt-3">
         {links.map((link, i) => (
           <a
             key={i}
@@ -159,15 +160,16 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-8"
           >
-            <Button className="w-16 h-16 flex flex-col items-center justify-center rounded-full bg-gray-800 text-violet-400 hover:bg-gray-200 transition">
-              <i className="bx bx-up-arrow-alt bx-rotate-45 text-xl" />
-              <span className="text-xs">Explore Service</span>
+            <Button className="w-18 h-18 flex flex-col items-center justify-center rounded-full bg-gray-800 text-violet-400 hover:bg-gray-200 transition">
+              <ArrowRight className="text-xl" />
+              <span className="text-xs">Explore<br/>Service</span>
             </Button>
 
             <div className="text-white mt-4 mx-3">
-              <span className="text-xs text-gray-500">
+              <div className="flex flex-col">
+              <span className="text-md text-gray-500 leading-none">
                 (2k) Positive user rating
               </span>
               <div className="flex items-center space-x-2">
@@ -178,6 +180,7 @@ export function HeroSection() {
                   alt="Google"
                 />
                 <p className="text-yellow-400">★★★★☆</p>
+              </div>
               </div>
             </div>
           </motion.div>

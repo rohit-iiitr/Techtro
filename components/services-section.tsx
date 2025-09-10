@@ -71,7 +71,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="relative py-20 bg-black overflow-hidden">
+    <section id="services" className="relative py-20 bg-gray-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading */}
         <motion.div
@@ -95,7 +95,7 @@ export function ServicesSection() {
                 designed to elevate your brand's visibility.
               </p>
 
-              <Button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-tr-none rounded-bl-none rounded-br-lg flex items-center font-semibold hover:bg-yellow-400">
+              <Button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-tr-none rounded-bl-none rounded-br-lg flex items-center font-semibold hover:bg-yellow-400 ">
                 View all services
                 <ArrowRight className="ml-2 h-4 w-4 text-black" />
               </Button>
@@ -116,7 +116,7 @@ export function ServicesSection() {
                 {/* Radial glow inside card (only on hover) */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 
-                                bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.25)_0%,transparent_60%)] filter blur-2xl"
+                                bg-[radial-gradient(circle_at_60%_50%,rgba(250,204,21,0.25)_0%,transparent_60%)] filter blur-3xl"
                 ></div>
 
                 <CardHeader className="relative z-10 top-4">
@@ -127,7 +127,7 @@ export function ServicesSection() {
                   <CardTitle className="text-xl font-bold group-hover:text-yellow-400 transition-colors">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-white/80 group-hover:text-yellow-300 leading-relaxed transition-colors">
+                  <CardDescription className="text-white/80 group-hover:text-yellow-400 leading-relaxed transition-colors">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -139,14 +139,21 @@ export function ServicesSection() {
                         key={featureIndex}
                         className="flex items-center text-sm text-white/70 group-hover:text-white"
                       >
-                        <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></div>
+                        <div className="w-1.5 h-1.5 bg-white rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex justify-end mt-4">
-                    <ArrowRight className="text-white h-5 w-5 group-hover:text-yellow-300 transition-colors" />
+                  <div className="flex justify-end mb-4">
+                    <Button
+                      variant="default"
+                      size="icon"
+                      className="ml-2 rounded-full group-hover:bg-yellow-400 border-2 border-solid transition-colors"
+                    >
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                    
                   </div>
                 </CardContent>
               </Card>

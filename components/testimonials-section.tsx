@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: "Devon Lane",
     role: "Senior Director",
-    image: "/professional-man-vp-headshot.jpg",
+    image: "/images/professional-man-vp-headshot.jpg",
     feedback:
       "It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently. It’s a pleasure working.",
   },
@@ -99,7 +99,7 @@ export default function Testimonials() {
             {testimonials.map((t) => (
               <motion.div
                 key={t.id}
-                className="min-w-[400px] max-w-[320px] flex-shrink-0 rounded-2xl bg-white p-6 shadow-md"
+                className="min-w-[400px] max-w-[320px] flex-shrink-0 rounded-tl-none rounded-tr-4xl rounded-bl-4xl rounded-br-none bg-white p-6 shadow-md"
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -114,6 +114,8 @@ export default function Testimonials() {
                   <Image
                     src={t.image}
                     alt={t.name}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div className="text-left">

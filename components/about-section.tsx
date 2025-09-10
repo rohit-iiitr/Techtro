@@ -30,7 +30,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="relative pt-20 bg-muted/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 mb-10 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Heading */}
         <motion.div
           ref={ref}
@@ -89,7 +89,7 @@ export function AboutSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-yellow-400 hover:bg-yellow-500 text-black px-5 py-3 rounded-lg font-medium flex items-center gap-2 transition"
+                className="bg-white hover:bg-yellow-400 text-black px-4 py-2 font-medium flex items-center gap-2 transition rounded-tl-lg rounded-br-lg rounded-tr-none rounded-bl-none border-2 border-black"
               >
                 About More <ArrowRight className="w-4 h-4" />
               </motion.button>
@@ -136,7 +136,7 @@ export function AboutSection() {
       </div>
 
       {/* Badges + Logos */}
-      <div className="bg-gray-100 py-12">
+      <div className="bg-gray-100 py-12 mt-24">
         {/* First Badge */}
         <div className="flex justify-start md:justify-center mb-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs tracking-wider text-black shadow-md">

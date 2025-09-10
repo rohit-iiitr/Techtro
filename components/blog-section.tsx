@@ -94,7 +94,7 @@ export function BlogSection() {
                   </div>
                 </div>
 
-                <CardContent className="pt-4">
+                <CardContent className="-mt-2">
                   {/* Author & Date */}
                   <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
                     <div className="flex items-center gap-4">
@@ -110,19 +110,22 @@ export function BlogSection() {
                   </div>
 
                   {/* Title + Arrow Button */}
-                  <div className="flex items-center justify-between">
-                    <CardHeader className="p-0">
+                  <div className="w-full -ms-5 ">
+                    <CardHeader className="">
                       <h3 className="text-lg font-bold text-foreground group-hover:text-yellow-400 transition-colors">
                         {post.title}
                       </h3>
                     </CardHeader>
+                    </div>
+                    <div className="flex justify-end mb-4">
                     <Button
-                      variant="ghost"
+                      variant="default"
                       size="icon"
-                      className="ml-2 rounded-full group-hover:bg-yellow-400 transition-colors"
+                      className="ml-2 rounded-full group-hover:bg-yellow-400 border-2 border-solid transition-colors"
                     >
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
+                    
                   </div>
                 </CardContent>
               </Card>

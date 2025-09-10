@@ -47,7 +47,7 @@ const HowWeDo = () => {
             impact. With a deep understanding of your industry and target
             audience.
           </p>
-          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md shadow-md transition flex items-center gap-2">
+          <Button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-br-lg flex items-center border-2 border-black hover:bg-yellow-400 rounded-tr-none rounded-bl-none">
             Let’s get planning →
           </Button>
         </motion.div>

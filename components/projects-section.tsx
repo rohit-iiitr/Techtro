@@ -118,7 +118,7 @@ export function ProjectsSection() {
                 At our digital marketing agency, we pride ourselves on our
                 systematic approach to achieving your business objectives.
               </p>
-              <Button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-br-lg flex items-center border-2 border-black hover:bg-yellow-400">
+              <Button className="bg-white text-black px-4 py-2 rounded-tl-lg rounded-br-lg flex items-center border-2 border-black hover:bg-yellow-400 rounded-tr-none rounded-bl-none">
                 See more work
                 <ArrowRight className="ml-2 h-4 w-4 text-black" />
               </Button>

@@ -51,7 +51,7 @@ export function Footer() {
     <footer className="relative bg-primary text-primary-foreground rounded-tl-[100px] overflow-hidden">
       {/* Background effects */}
       <div className="absolute top-32 -right-56 w-[30%] h-[30%] rounded-full bg-[#4F59A8] mix-blend-screen filter blur-3xl opacity-30"></div>
-      <div className="absolute -bottom-16 -left-44 w-[35%] h-[60%] rounded-full bg-[#CCF575] mix-blend-screen filter blur-3xl opacity-25 overflow-hidden"></div>
+      <div className="absolute -bottom-16 -left-44 w-[35%] h-[40%] rounded-full bg-[#CCF575] mix-blend-screen filter blur-3xl opacity-25 overflow-hidden"></div>
 <ContactBanner />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
         
