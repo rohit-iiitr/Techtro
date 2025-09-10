@@ -14,14 +14,14 @@ const HowWeDo = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-16 mx-5"
       >
         <div className="flex flex-col items-start px-5">
           <div className="flex items-center gap-2">
             <span className="text-yellow-500 text-lg">✦</span>
             <h2 className="text-2xl font-bold">HOW WE DO</h2>
           </div>
-          <p className="text-sm text-muted-foreground max-w-3xl mt-4">
+          <p className="text-sm text-muted-foreground max-w-3xl mt-4 ms-6">
             At our digital marketing agency, we pride ourselves on our
             systematic approach to achieving your business objectives.
           </p>
@@ -36,9 +36,9 @@ const HowWeDo = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="md:pl-8"
+          className="md:pl-6 mx-12"
         >
-          <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+          <h3 className="text-2xl md:text-3xl font-semibold mb-7">
             Why Our Solutions Fit Your Needs.
           </h3>
           <p className="text-gray-600 mb-6 leading-relaxed">
@@ -66,7 +66,7 @@ const HowWeDo = () => {
               alt="Marketing Planning"
               width={500}
               height={400}
-              className="w-full h-[400px] object-cover p-3 rounded-tl-4xl rounded-br-4xl"
+              className="w-full h-[300px] object-cover p-3 rounded-tl-4xl rounded-br-4xl"
             />
             <h4 className="text-lg font-semibold px-4 mt-2">
               Strategic Planning & Goal Setting
